@@ -54,6 +54,10 @@ pkg_config("target_defaults") {
     "-Wall",
     "-Werror",
     "-Wextra",
+    # Enabled by default in C++20 and is triggered in tensorflow-2.12 when
+    # building on ARM platform. Since we're going to deprecate NNAPI eventually,
+    # temporarily ignore this warning to unblock the build for testing.
+    "-Wno-deprecated-anon-enum-enum-conversion",
   ]
   cflags_cc = [
     "-std=c++20",
