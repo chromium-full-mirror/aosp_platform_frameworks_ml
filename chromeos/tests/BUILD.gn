@@ -51,6 +51,10 @@ pkg_config("vts_defaults") {
     "//aosp/hardware/interfaces/neuralnetworks/utils/adapter/aidl/include/",
     "//aosp/hardware/interfaces/neuralnetworks/utils/common/include/"
   ]
+  cflags_cc = [
+    # Many files miss field inits
+    "-Wno-missing-field-initializers",
+  ]
   pkg_deps = [
     "libnnapi-support",
   ]
@@ -262,6 +266,7 @@ executable("cros_nnapi_cts") {
   cflags_cc = [
     "-Wno-sign-compare",
     "-Wno-unused-parameter",
+    "-Wno-missing-field-initializers",
   ]
   defines = [
     "NNTEST_CTS",
