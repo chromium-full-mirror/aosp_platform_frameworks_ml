@@ -123,6 +123,12 @@ pkg_config("common_defaults") {
     "NN_INCLUDE_CPU_IMPLEMENTATION",
     "TF_LITE_DISABLE_X86_NEON",
   ]
+  cflags_cc = [
+    # Many files miss field inits
+    "-Wno-missing-field-initializers",
+    # Many files have incorrect format specifiers
+    "-Wno-format",
+  ]
   pkg_deps = [ "libnnapi-support", "libmojo", "libminijail", ]
 }
 
