@@ -64,9 +64,11 @@ bool reverse(IOperationExecutionContext* context) {
     const tflite::RuntimeShape tensorShape =
             convertShapeToTflshape(context->getInputShape(kInputTensor));
 
-    tflite::reference_ops::Reverse((context->getInputBuffer<int32_t>(kInputAxisTensor))[0],
-                                   tensorShape, context->getInputBuffer<T>(kInputTensor),
-                                   tensorShape, context->getOutputBuffer<T>(kOutputTensor));
+    std::array<int32_t, 8> axes = {};
+    axes[0] = (context->getInputBuffer<int32_t>(kInputAxisTensor))[0];
+    tflite::reference_ops::Reverse(axes, 1, tensorShape,
+                                   context->getInputBuffer<T>(kInputTensor),
+                                   context->getOutputBuffer<T>(kOutputTensor));
     return true;
 }
 
