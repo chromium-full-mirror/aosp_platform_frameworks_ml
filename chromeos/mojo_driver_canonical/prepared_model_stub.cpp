@@ -219,7 +219,6 @@ GeneralResult<SharedBurst> PreparedModelStub::configureExecutionBurst() const {
 std::any PreparedModelStub::getUnderlyingResource() const {
   LOG(FATAL) << "PreparedModelStub::getUnderlyingResource should not be called "
                 "since IDevice::allocate is not supported by ipc driver.";
-  return {};
 }
 
 }  // namespace nn

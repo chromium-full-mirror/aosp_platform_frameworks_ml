@@ -128,7 +128,6 @@ bool MojoControllerCanonical::SpawnWorkerProcessAndGetPid(
 
   if (minijail_run_pid(jail.get(), &strace_path[0], argv, worker_pid) != 0) {
     LOG(FATAL) << "Failed to spawn worker process using minijail";
-    return false;
   }
 #else
   std::string seccomp_policy_path =
@@ -145,7 +144,6 @@ bool MojoControllerCanonical::SpawnWorkerProcessAndGetPid(
 
   if (minijail_run_pid(jail.get(), &worker_path[0], argv, worker_pid) != 0) {
     LOG(FATAL) << "Failed to spawn worker process using minijail";
-    return false;
   }
 #endif
 
