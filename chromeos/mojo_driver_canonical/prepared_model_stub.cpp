@@ -115,7 +115,7 @@ PreparedModelStub::executeFencedInternal(
     relocation.input->flush();
   }
   GeneralError status;
-  absl::optional<SyncFence> opt_fence;
+  std::optional<SyncFence> opt_fence;
   ::mojo::PendingRemote<mojom::IExecuteFencedInfoCallback> fenced_info;
   auto remote_call = [&request, &waitFor, &measure, &deadline,
                       &loopTimeoutDuration, &timeoutDurationAfterFence, &hints,
@@ -127,7 +127,7 @@ PreparedModelStub::executeFencedInternal(
                           extensionNameToPrefix, std::move(cb));
   };
   auto callback = DefaultOutputCallback<
-      GeneralError, absl::optional<SyncFence>,
+      GeneralError, std::optional<SyncFence>,
       ::mojo::PendingRemote<mojom::IExecuteFencedInfoCallback>>;
   HANDLE_REMOTE_CALL_FAILURE(
       CallRemote(task_runner_, remote_, std::move(remote_call),

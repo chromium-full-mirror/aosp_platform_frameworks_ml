@@ -23,8 +23,8 @@ const GeneralError kGeneralErrorNone = GeneralError{"", ErrorStatus::NONE};
 void IPreparedModelImpl::execute(
     Request request,
     MeasureTiming measure,
-    absl::optional<TimePoint> deadline,
-    absl::optional<Duration> loopTimeoutDuration,
+    std::optional<TimePoint> deadline,
+    std::optional<Duration> loopTimeoutDuration,
     const std::vector<TokenValuePair>& hints,
     const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
     executeCallback callback) {
@@ -41,9 +41,9 @@ void IPreparedModelImpl::executeFenced(
     Request request,
     std::vector<SyncFence> waitFor,
     MeasureTiming measure,
-    absl::optional<TimePoint> deadline,
-    absl::optional<Duration> loopTimeoutDuration,
-    absl::optional<Duration> timeoutDurationAfterFence,
+    std::optional<TimePoint> deadline,
+    std::optional<Duration> loopTimeoutDuration,
+    std::optional<Duration> timeoutDurationAfterFence,
     const std::vector<TokenValuePair>& hints,
     const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
     executeFencedCallback callback) {
@@ -57,10 +57,10 @@ void IPreparedModelImpl::executeFenced(
           result.ok() ? result.value().second : nullptr),
       pending_remote.InitWithNewPipeAndPassReceiver());
   // PrepareModel implmentation might return a SyncFence with a nullptr handle
-  absl::optional<SyncFence> opt_fence =
+  std::optional<SyncFence> opt_fence =
       result.ok() && result.value().first.hasFd()
-          ? absl::make_optional(result.value().first)
-          : absl::nullopt;
+          ? std::make_optional(result.value().first)
+          : std::nullopt;
   std::move(callback).Run(result.ok() ? kGeneralErrorNone : result.error(),
                           opt_fence, std::move(pending_remote));
   VLOG(ML_NN_CHROMEOS_VLOG_LEVEL)
@@ -70,7 +70,7 @@ void IPreparedModelImpl::executeFenced(
 void IPreparedModelImpl::createReusableExecution(
     Request request,
     MeasureTiming measure,
-    absl::optional<Duration> loopTimeoutDuration,
+    std::optional<Duration> loopTimeoutDuration,
     const std::vector<TokenValuePair>& hints,
     const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
     createReusableExecutionCallback callback) {

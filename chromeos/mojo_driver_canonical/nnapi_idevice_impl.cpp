@@ -75,7 +75,7 @@ void IDeviceImpl::prepareModel(
     Model model,
     ExecutionPreference preference,
     Priority priority,
-    absl::optional<TimePoint> deadline,
+    std::optional<TimePoint> deadline,
     const std::vector<SharedHandle>& modelCache,
     const std::vector<SharedHandle>& dataCache,
     CacheToken token,
@@ -96,7 +96,7 @@ void IDeviceImpl::prepareModel(
 }
 
 void IDeviceImpl::prepareModelFromCache(
-    absl::optional<TimePoint> deadline,
+    std::optional<TimePoint> deadline,
     const std::vector<SharedHandle>& modelCache,
     const std::vector<SharedHandle>& dataCache,
     CacheToken token,

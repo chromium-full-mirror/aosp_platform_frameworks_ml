@@ -26,8 +26,8 @@ class IBurstImpl : public chromeos::nnapi::canonical::mojom::IBurst {
 
   void execute(Request request,
                MeasureTiming measure,
-               absl::optional<TimePoint> deadline,
-               absl::optional<Duration> loopTimeoutDuration,
+               std::optional<TimePoint> deadline,
+               std::optional<Duration> loopTimeoutDuration,
                const std::vector<TokenValuePair>& hints,
                const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
                executeCallback callback) override;
@@ -35,7 +35,7 @@ class IBurstImpl : public chromeos::nnapi::canonical::mojom::IBurst {
   void createReusableExecution(
       Request request,
       MeasureTiming measure,
-      absl::optional<Duration> loopTimeoutDuration,
+      std::optional<Duration> loopTimeoutDuration,
       const std::vector<TokenValuePair>& hints,
       const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
       createReusableExecutionCallback callback) override;

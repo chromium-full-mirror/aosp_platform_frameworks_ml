@@ -51,7 +51,7 @@ ExecutionStub::computeFenced(
   VLOG(ML_NN_CHROMEOS_VLOG_LEVEL) << "ExecutionStub::computeFenced";
 
   GeneralError status;
-  absl::optional<SyncFence> opt_fence;
+  std::optional<SyncFence> opt_fence;
   ::mojo::PendingRemote<mojom::IExecuteFencedInfoCallback> fenced_info;
   auto remote_call = [&waitFor, &deadline, &timeoutDurationAfterFence](
                          mojo::Remote<mojom::IExecution>& remote,
@@ -60,7 +60,7 @@ ExecutionStub::computeFenced(
                           std::move(cb));
   };
   auto callback = DefaultOutputCallback<
-      GeneralError, absl::optional<SyncFence>,
+      GeneralError, std::optional<SyncFence>,
       ::mojo::PendingRemote<mojom::IExecuteFencedInfoCallback>>;
   HANDLE_REMOTE_CALL_FAILURE(
       CallRemote(task_runner_, remote_, std::move(remote_call),

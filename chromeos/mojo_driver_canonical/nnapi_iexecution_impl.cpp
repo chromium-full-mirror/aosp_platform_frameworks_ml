@@ -19,7 +19,7 @@ const ExecutionError kExecutionErrorNone =
     ExecutionError{"", ErrorStatus::NONE};
 const GeneralError kGeneralErrorNone = GeneralError{"", ErrorStatus::NONE};
 
-void IExecutionImpl::compute(absl::optional<TimePoint> deadline,
+void IExecutionImpl::compute(std::optional<TimePoint> deadline,
                              computeCallback callback) {
   VLOG(ML_NN_CHROMEOS_VLOG_LEVEL) << "IExecutionImpl::compute";
   auto result = wrapped_execution_->compute(deadline);
@@ -28,8 +28,8 @@ void IExecutionImpl::compute(absl::optional<TimePoint> deadline,
 }
 void IExecutionImpl::computeFenced(
     std::vector<SyncFence> waitFor,
-    absl::optional<TimePoint> deadline,
-    absl::optional<Duration> timeoutDurationAfterFence,
+    std::optional<TimePoint> deadline,
+    std::optional<Duration> timeoutDurationAfterFence,
     computeFencedCallback callback) {
   VLOG(ML_NN_CHROMEOS_VLOG_LEVEL) << "IExecutionImpl::compute";
   auto result = wrapped_execution_->computeFenced(waitFor, deadline,
@@ -39,10 +39,10 @@ void IExecutionImpl::computeFenced(
       std::make_unique<IExecuteFencedInfoCallbackImpl>(
           result.ok() ? result.value().second : nullptr),
       pending_remote.InitWithNewPipeAndPassReceiver());
-  absl::optional<SyncFence> opt_fence =
+  std::optional<SyncFence> opt_fence =
       result.ok() && result.value().first.hasFd()
-          ? absl::make_optional(result.value().first)
-          : absl::nullopt;
+          ? std::make_optional(result.value().first)
+          : std::nullopt;
   std::move(callback).Run(result.ok() ? kGeneralErrorNone : result.error(),
                           opt_fence, std::move(pending_remote));
 }

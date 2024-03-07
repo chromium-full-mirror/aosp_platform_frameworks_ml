@@ -22,8 +22,8 @@ const GeneralError kGeneralErrorNone = GeneralError{"", ErrorStatus::NONE};
 void IBurstImpl::execute(
     Request request,
     MeasureTiming measure,
-    absl::optional<TimePoint> deadline,
-    absl::optional<Duration> loopTimeoutDuration,
+    std::optional<TimePoint> deadline,
+    std::optional<Duration> loopTimeoutDuration,
     const std::vector<TokenValuePair>& hints,
     const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
     executeCallback callback) {
@@ -38,7 +38,7 @@ void IBurstImpl::execute(
 void IBurstImpl::createReusableExecution(
     Request request,
     MeasureTiming measure,
-    absl::optional<Duration> loopTimeoutDuration,
+    std::optional<Duration> loopTimeoutDuration,
     const std::vector<TokenValuePair>& hints,
     const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
     createReusableExecutionCallback callback) {

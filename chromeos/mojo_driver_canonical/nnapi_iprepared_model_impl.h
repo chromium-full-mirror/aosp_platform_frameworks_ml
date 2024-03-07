@@ -28,8 +28,8 @@ class IPreparedModelImpl
 
   void execute(Request request,
                MeasureTiming measure,
-               absl::optional<TimePoint> deadline,
-               absl::optional<Duration> loopTimeoutDuration,
+               std::optional<TimePoint> deadline,
+               std::optional<Duration> loopTimeoutDuration,
                const std::vector<TokenValuePair>& hints,
                const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
                executeCallback callback) override;
@@ -38,9 +38,9 @@ class IPreparedModelImpl
       Request request,
       std::vector<SyncFence> waitFor,
       MeasureTiming measure,
-      absl::optional<TimePoint> deadline,
-      absl::optional<Duration> loopTimeoutDuration,
-      absl::optional<Duration> timeoutDurationAfterFence,
+      std::optional<TimePoint> deadline,
+      std::optional<Duration> loopTimeoutDuration,
+      std::optional<Duration> timeoutDurationAfterFence,
       const std::vector<TokenValuePair>& hints,
       const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
       executeFencedCallback callback) override;
@@ -48,7 +48,7 @@ class IPreparedModelImpl
   void createReusableExecution(
       Request request,
       MeasureTiming measure,
-      absl::optional<Duration> loopTimeoutDuration,
+      std::optional<Duration> loopTimeoutDuration,
       const std::vector<TokenValuePair>& hints,
       const std::vector<ExtensionNameAndPrefix>& extensionNameToPrefix,
       createReusableExecutionCallback callback) override;

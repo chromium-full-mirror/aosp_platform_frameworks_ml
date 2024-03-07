@@ -948,11 +948,11 @@ template <>
 struct StructTraits<chromeos::nnapi::canonical::mojom::Timing::DataView,
                     android::nn::Timing> {
  public:
-  static absl::optional<android::nn::Duration> timeOnDevice(
+  static std::optional<android::nn::Duration> timeOnDevice(
       const android::nn::Timing& obj) {
     return obj.timeOnDevice;
   }
-  static absl::optional<android::nn::Duration> timeInDriver(
+  static std::optional<android::nn::Duration> timeInDriver(
       const android::nn::Timing& obj) {
     return obj.timeInDriver;
   }

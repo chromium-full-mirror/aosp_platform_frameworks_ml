@@ -24,11 +24,11 @@ class IExecutionImpl : public chromeos::nnapi::canonical::mojom::IExecution {
  public:
   IExecutionImpl(SharedExecution execution) : wrapped_execution_(execution) {}
 
-  void compute(absl::optional<TimePoint> deadline,
+  void compute(std::optional<TimePoint> deadline,
                computeCallback callback) override;
   void computeFenced(std::vector<SyncFence> waitFor,
-                     absl::optional<TimePoint> deadline,
-                     absl::optional<Duration> timeoutDurationAfterFence,
+                     std::optional<TimePoint> deadline,
+                     std::optional<Duration> timeoutDurationAfterFence,
                      computeFencedCallback callback) override;
 
  private:
