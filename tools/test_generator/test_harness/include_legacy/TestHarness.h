@@ -262,7 +262,7 @@ void compare_(const std::map<int, std::vector<T>>& golden,
 inline int getQuant8AllowedError() {
     const ::testing::TestInfo* const testInfo =
             ::testing::UnitTest::GetInstance()->current_test_info();
-    const std::string testCaseName = testInfo->test_case_name();
+    const std::string testCaseName = testInfo->test_suite_name();
     const std::string testName = testInfo->name();
     // We relax the quant8 precision for all tests with mobilenet:
     // - CTS/VTS GeneratedTest and DynamicOutputShapeTest with mobilenet

@@ -178,7 +178,7 @@ class RandomGraphTest : public ::testing::TestWithParam<uint32_t> {
         // Initialize logging.
         const ::testing::TestInfo* const testInfo =
                 ::testing::UnitTest::GetInstance()->current_test_info();
-        mTestName = mTestName + testInfo->test_case_name() + "_" + testInfo->name();
+        mTestName = mTestName + testInfo->test_suite_name() + "_" + testInfo->name();
         std::replace(mTestName.begin(), mTestName.end(), '/', '_');
         if (mEnableLog) NN_FUZZER_LOG_INIT(NN_TMP_DIR "/" + mTestName + ".log");
     }
