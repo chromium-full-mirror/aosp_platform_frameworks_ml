@@ -18,6 +18,7 @@ close: 1
 dup: 1
 rt_sigprocmask: 1
 mmap: arg2 in ~PROT_EXEC || arg2 in ~PROT_WRITE
+mseal: 1
 set_robust_list: 1
 clone: 1
 madvise: 1
