@@ -21,6 +21,7 @@ mmap: arg2 in ~PROT_EXEC || arg2 in ~PROT_WRITE
 mseal: 1
 set_robust_list: 1
 clone: 1
+clone3: 1
 madvise: 1
 exit: 1
 munmap: 1
