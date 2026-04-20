@@ -13,10 +13,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::ErrorStatus,
       android::nn::ErrorStatus input) {
     return static_cast<chromeos::nnapi::canonical::mojom::ErrorStatus>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::ErrorStatus input,
-                        android::nn::ErrorStatus* output) {
-    *output = static_cast<android::nn::ErrorStatus>(input);
-    return true;
+  static android::nn::ErrorStatus FromMojom(
+      chromeos::nnapi::canonical::mojom::ErrorStatus input) {
+    return static_cast<android::nn::ErrorStatus>(input);
   }
 };
 
@@ -27,10 +26,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::OperandType,
       android::nn::OperandType input) {
     return static_cast<chromeos::nnapi::canonical::mojom::OperandType>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::OperandType input,
-                        android::nn::OperandType* output) {
-    *output = static_cast<android::nn::OperandType>(input);
-    return true;
+  static android::nn::OperandType FromMojom(
+      chromeos::nnapi::canonical::mojom::OperandType input) {
+    return static_cast<android::nn::OperandType>(input);
   }
 };
 
@@ -41,10 +39,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::VersionLevel,
       android::nn::Version::Level input) {
     return static_cast<chromeos::nnapi::canonical::mojom::VersionLevel>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::VersionLevel input,
-                        android::nn::Version::Level* output) {
-    *output = static_cast<android::nn::Version::Level>(input);
-    return true;
+  static android::nn::Version::Level FromMojom(
+      chromeos::nnapi::canonical::mojom::VersionLevel input) {
+    return static_cast<android::nn::Version::Level>(input);
   }
 };
 
@@ -55,10 +52,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::DeviceType,
       android::nn::DeviceType input) {
     return static_cast<chromeos::nnapi::canonical::mojom::DeviceType>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::DeviceType input,
-                        android::nn::DeviceType* output) {
-    *output = static_cast<android::nn::DeviceType>(input);
-    return true;
+  static android::nn::DeviceType FromMojom(
+      chromeos::nnapi::canonical::mojom::DeviceType input) {
+    return static_cast<android::nn::DeviceType>(input);
   }
 };
 
@@ -70,11 +66,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::ExecutionPreference,
     return static_cast<chromeos::nnapi::canonical::mojom::ExecutionPreference>(
         input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::canonical::mojom::ExecutionPreference input,
-      android::nn::ExecutionPreference* output) {
-    *output = static_cast<android::nn::ExecutionPreference>(input);
-    return true;
+  static android::nn::ExecutionPreference FromMojom(
+      chromeos::nnapi::canonical::mojom::ExecutionPreference input) {
+    return static_cast<android::nn::ExecutionPreference>(input);
   }
 };
 
@@ -85,10 +79,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::Priority,
       android::nn::Priority input) {
     return static_cast<chromeos::nnapi::canonical::mojom::Priority>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::Priority input,
-                        android::nn::Priority* output) {
-    *output = static_cast<android::nn::Priority>(input);
-    return true;
+  static android::nn::Priority FromMojom(
+      chromeos::nnapi::canonical::mojom::Priority input) {
+    return static_cast<android::nn::Priority>(input);
   }
 };
 
@@ -100,11 +93,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::OperandLifeTime,
     return static_cast<chromeos::nnapi::canonical::mojom::OperandLifeTime>(
         input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::canonical::mojom::OperandLifeTime input,
-      android::nn::Operand::LifeTime* output) {
-    *output = static_cast<android::nn::Operand::LifeTime>(input);
-    return true;
+  static android::nn::Operand::LifeTime FromMojom(
+      chromeos::nnapi::canonical::mojom::OperandLifeTime input) {
+    return static_cast<android::nn::Operand::LifeTime>(input);
   }
 };
 
@@ -115,10 +106,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::OperationType,
       android::nn::OperationType input) {
     return static_cast<chromeos::nnapi::canonical::mojom::OperationType>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::OperationType input,
-                        android::nn::OperationType* output) {
-    *output = static_cast<android::nn::OperationType>(input);
-    return true;
+  static android::nn::OperationType FromMojom(
+      chromeos::nnapi::canonical::mojom::OperationType input) {
+    return static_cast<android::nn::OperationType>(input);
   }
 };
 
@@ -129,10 +119,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::MeasureTiming,
       android::nn::MeasureTiming input) {
     return static_cast<chromeos::nnapi::canonical::mojom::MeasureTiming>(input);
   }
-  static bool FromMojom(chromeos::nnapi::canonical::mojom::MeasureTiming input,
-                        android::nn::MeasureTiming* output) {
-    *output = static_cast<android::nn::MeasureTiming>(input);
-    return true;
+  static android::nn::MeasureTiming FromMojom(
+      chromeos::nnapi::canonical::mojom::MeasureTiming input) {
+    return static_cast<android::nn::MeasureTiming>(input);
   }
 };
 
@@ -144,11 +133,9 @@ struct EnumTraits<chromeos::nnapi::canonical::mojom::RequestArgumentLifeTime,
     return static_cast<
         chromeos::nnapi::canonical::mojom::RequestArgumentLifeTime>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::canonical::mojom::RequestArgumentLifeTime input,
-      android::nn::Request::Argument::LifeTime* output) {
-    *output = static_cast<android::nn::Request::Argument::LifeTime>(input);
-    return true;
+  static android::nn::Request::Argument::LifeTime FromMojom(
+      chromeos::nnapi::canonical::mojom::RequestArgumentLifeTime input) {
+    return static_cast<android::nn::Request::Argument::LifeTime>(input);
   }
 };
 

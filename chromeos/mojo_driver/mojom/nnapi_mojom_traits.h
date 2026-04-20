@@ -126,12 +126,10 @@ struct EnumTraits<chromeos::nnapi::mojom::ErrorStatus,
       android::hardware::neuralnetworks::V1_0::ErrorStatus input) {
     return static_cast<chromeos::nnapi::mojom::ErrorStatus>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::ErrorStatus input,
-      android::hardware::neuralnetworks::V1_0::ErrorStatus* output) {
-    *output = static_cast<android::hardware::neuralnetworks::V1_0::ErrorStatus>(
+  static android::hardware::neuralnetworks::V1_0::ErrorStatus FromMojom(
+      chromeos::nnapi::mojom::ErrorStatus input) {
+    return static_cast<android::hardware::neuralnetworks::V1_0::ErrorStatus>(
         input);
-    return true;
   }
 };
 
@@ -142,13 +140,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperationType,
       android::hardware::neuralnetworks::V1_1::OperationType input) {
     return static_cast<chromeos::nnapi::mojom::OperationType>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperationType input,
-      android::hardware::neuralnetworks::V1_1::OperationType* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_1::OperationType>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_1::OperationType FromMojom(
+      chromeos::nnapi::mojom::OperationType input) {
+    return static_cast<android::hardware::neuralnetworks::V1_1::OperationType>(
+        input);
   }
 };
 
@@ -159,12 +154,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperandType,
       android::hardware::neuralnetworks::V1_0::OperandType input) {
     return static_cast<chromeos::nnapi::mojom::OperandType>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperandType input,
-      android::hardware::neuralnetworks::V1_0::OperandType* output) {
-    *output = static_cast<android::hardware::neuralnetworks::V1_0::OperandType>(
+  static android::hardware::neuralnetworks::V1_0::OperandType FromMojom(
+      chromeos::nnapi::mojom::OperandType input) {
+    return static_cast<android::hardware::neuralnetworks::V1_0::OperandType>(
         input);
-    return true;
   }
 };
 
@@ -175,13 +168,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperandLifeTime,
       android::hardware::neuralnetworks::V1_0::OperandLifeTime input) {
     return static_cast<chromeos::nnapi::mojom::OperandLifeTime>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperandLifeTime input,
-      android::hardware::neuralnetworks::V1_0::OperandLifeTime* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_0::OperandLifeTime>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_0::OperandLifeTime FromMojom(
+      chromeos::nnapi::mojom::OperandLifeTime input) {
+    return static_cast<
+        android::hardware::neuralnetworks::V1_0::OperandLifeTime>(input);
   }
 };
 
@@ -504,13 +494,10 @@ struct EnumTraits<chromeos::nnapi::mojom::DeviceStatus,
       android::hardware::neuralnetworks::V1_0::DeviceStatus input) {
     return static_cast<chromeos::nnapi::mojom::DeviceStatus>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::DeviceStatus input,
-      android::hardware::neuralnetworks::V1_0::DeviceStatus* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_0::DeviceStatus>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_0::DeviceStatus FromMojom(
+      chromeos::nnapi::mojom::DeviceStatus input) {
+    return static_cast<android::hardware::neuralnetworks::V1_0::DeviceStatus>(
+        input);
   }
 };
 
@@ -521,13 +508,10 @@ struct EnumTraits<chromeos::nnapi::mojom::ExecutionPreference,
       android::hardware::neuralnetworks::V1_1::ExecutionPreference input) {
     return static_cast<chromeos::nnapi::mojom::ExecutionPreference>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::ExecutionPreference input,
-      android::hardware::neuralnetworks::V1_1::ExecutionPreference* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_1::ExecutionPreference>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_1::ExecutionPreference FromMojom(
+      chromeos::nnapi::mojom::ExecutionPreference input) {
+    return static_cast<
+        android::hardware::neuralnetworks::V1_1::ExecutionPreference>(input);
   }
 };
 
@@ -538,12 +522,10 @@ struct EnumTraits<chromeos::nnapi::mojom::DeviceType,
       android::hardware::neuralnetworks::V1_2::DeviceType input) {
     return static_cast<chromeos::nnapi::mojom::DeviceType>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::DeviceType input,
-      android::hardware::neuralnetworks::V1_2::DeviceType* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_2::DeviceType>(input);
-    return true;
+  static android::hardware::neuralnetworks::V1_2::DeviceType FromMojom(
+      chromeos::nnapi::mojom::DeviceType input) {
+    return static_cast<android::hardware::neuralnetworks::V1_2::DeviceType>(
+        input);
   }
 };
 
@@ -774,12 +756,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperandType_1_2,
       android::hardware::neuralnetworks::V1_2::OperandType input) {
     return static_cast<chromeos::nnapi::mojom::OperandType_1_2>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperandType_1_2 input,
-      android::hardware::neuralnetworks::V1_2::OperandType* output) {
-    *output = static_cast<android::hardware::neuralnetworks::V1_2::OperandType>(
+  static android::hardware::neuralnetworks::V1_2::OperandType FromMojom(
+      chromeos::nnapi::mojom::OperandType_1_2 input) {
+    return static_cast<android::hardware::neuralnetworks::V1_2::OperandType>(
         input);
-    return true;
   }
 };
 
@@ -790,13 +770,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperationType_1_2,
       android::hardware::neuralnetworks::V1_2::OperationType input) {
     return static_cast<chromeos::nnapi::mojom::OperationType_1_2>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperationType_1_2 input,
-      android::hardware::neuralnetworks::V1_2::OperationType* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_2::OperationType>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_2::OperationType FromMojom(
+      chromeos::nnapi::mojom::OperationType_1_2 input) {
+    return static_cast<android::hardware::neuralnetworks::V1_2::OperationType>(
+        input);
   }
 };
 
@@ -952,13 +929,10 @@ struct EnumTraits<chromeos::nnapi::mojom::MeasureTiming,
       android::hardware::neuralnetworks::V1_2::MeasureTiming input) {
     return static_cast<chromeos::nnapi::mojom::MeasureTiming>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::MeasureTiming input,
-      android::hardware::neuralnetworks::V1_2::MeasureTiming* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_2::MeasureTiming>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_2::MeasureTiming FromMojom(
+      chromeos::nnapi::mojom::MeasureTiming input) {
+    return static_cast<android::hardware::neuralnetworks::V1_2::MeasureTiming>(
+        input);
   }
 };
 
@@ -971,12 +945,10 @@ struct EnumTraits<chromeos::nnapi::mojom::ErrorStatus_1_3,
       android::hardware::neuralnetworks::V1_3::ErrorStatus input) {
     return static_cast<chromeos::nnapi::mojom::ErrorStatus_1_3>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::ErrorStatus_1_3 input,
-      android::hardware::neuralnetworks::V1_3::ErrorStatus* output) {
-    *output = static_cast<android::hardware::neuralnetworks::V1_3::ErrorStatus>(
+  static android::hardware::neuralnetworks::V1_3::ErrorStatus FromMojom(
+      chromeos::nnapi::mojom::ErrorStatus_1_3 input) {
+    return static_cast<android::hardware::neuralnetworks::V1_3::ErrorStatus>(
         input);
-    return true;
   }
 };
 
@@ -987,13 +959,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperandLifeTime_1_3,
       android::hardware::neuralnetworks::V1_3::OperandLifeTime input) {
     return static_cast<chromeos::nnapi::mojom::OperandLifeTime_1_3>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperandLifeTime_1_3 input,
-      android::hardware::neuralnetworks::V1_3::OperandLifeTime* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_3::OperandLifeTime>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_3::OperandLifeTime FromMojom(
+      chromeos::nnapi::mojom::OperandLifeTime_1_3 input) {
+    return static_cast<
+        android::hardware::neuralnetworks::V1_3::OperandLifeTime>(input);
   }
 };
 
@@ -1004,12 +973,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperandType_1_3,
       android::hardware::neuralnetworks::V1_3::OperandType input) {
     return static_cast<chromeos::nnapi::mojom::OperandType_1_3>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperandType_1_3 input,
-      android::hardware::neuralnetworks::V1_3::OperandType* output) {
-    *output = static_cast<android::hardware::neuralnetworks::V1_3::OperandType>(
+  static android::hardware::neuralnetworks::V1_3::OperandType FromMojom(
+      chromeos::nnapi::mojom::OperandType_1_3 input) {
+    return static_cast<android::hardware::neuralnetworks::V1_3::OperandType>(
         input);
-    return true;
   }
 };
 
@@ -1020,13 +987,10 @@ struct EnumTraits<chromeos::nnapi::mojom::OperationType_1_3,
       android::hardware::neuralnetworks::V1_3::OperationType input) {
     return static_cast<chromeos::nnapi::mojom::OperationType_1_3>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::OperationType_1_3 input,
-      android::hardware::neuralnetworks::V1_3::OperationType* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_3::OperationType>(
-            input);
-    return true;
+  static android::hardware::neuralnetworks::V1_3::OperationType FromMojom(
+      chromeos::nnapi::mojom::OperationType_1_3 input) {
+    return static_cast<android::hardware::neuralnetworks::V1_3::OperationType>(
+        input);
   }
 };
 
@@ -1206,12 +1170,10 @@ struct EnumTraits<chromeos::nnapi::mojom::Priority,
       android::hardware::neuralnetworks::V1_3::Priority input) {
     return static_cast<chromeos::nnapi::mojom::Priority>(input);
   }
-  static bool FromMojom(
-      chromeos::nnapi::mojom::Priority input,
-      android::hardware::neuralnetworks::V1_3::Priority* output) {
-    *output =
-        static_cast<android::hardware::neuralnetworks::V1_3::Priority>(input);
-    return true;
+  static android::hardware::neuralnetworks::V1_3::Priority FromMojom(
+      chromeos::nnapi::mojom::Priority input) {
+    return static_cast<android::hardware::neuralnetworks::V1_3::Priority>(
+        input);
   }
 };
 
